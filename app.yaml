@@ -17,5 +17,5 @@ spec:
     targetRevision: main
     helm:
       values: |
-        name: some-test324
+        name: some
         address: <test>
