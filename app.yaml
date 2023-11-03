@@ -15,6 +15,7 @@ spec:
     targetRevision: main
     helm:
       values: |
+        name: some-test324
         address: <path:secret/data/test#test>
 
 ---
@@ -36,4 +37,5 @@ spec:
     targetRevision: main
     helm:
       values: |
+        name: sometstst
         address: <path:secret/data/some-test/test#test>
