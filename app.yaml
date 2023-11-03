@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: new-test
   namespace: argocd
+  annotations:
+    avp.kubernetes.io/path: "secret/data/some-test/test"
 spec:
   destination:
     name: ''
@@ -16,26 +18,4 @@ spec:
     helm:
       values: |
         name: some-test324
-        address: <path:secret/data/test#test>
-
----
-
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: some-test
-  namespace: argocd
-spec:
-  destination:
-    name: ''
-    namespace: default
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    path: .
-    repoURL: https://github.com/devops893/helm-2.git
-    targetRevision: main
-    helm:
-      values: |
-        name: sometstst
-        address: <path:secret/data/some-test/test#test>
+        address: <test>
